@@ -1,0 +1,73 @@
+<!-- datasets_heartdisease.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Heart Disease</h1>
+    
+    <!-- Additional Information Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 style="color: darkblue;">Additional Information</h3>
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" data-bs-target="#infoCard" aria-expanded="false" aria-controls="infoCard" style="cursor: pointer;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>Details</span>
+                        <span class="material-icons" id="infoCardArrow">expand_more</span>
+                    </div>
+                </div>
+                <div class="collapse" id="infoCard">
+                    <div class="card-body">
+                        "The 'goal' field refers to the presence of heart disease in the patient. It is integer valued from 0 (no presence) to 4. Experiments with the Cleveland database have concentrated on simply attempting to distinguish presence (values 1,2,3,4) from absence (value 0)."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Citation Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 style="color: darkblue;">Citation</h3>
+            <div class="card">
+                <div class="card-header" data-bs-toggle="collapse" data-bs-target="#citationCard" aria-expanded="false" aria-controls="citationCard" style="cursor: pointer;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>Details</span>
+                        <span class="material-icons" id="citationCardArrow">expand_more</span>
+                    </div>
+                </div>
+                <div class="collapse" id="citationCard">
+                    <div class="card-body">
+                        Janosi, Andras, Steinbrunn, William, Pfisterer, Matthias, and Detrano, Robert. (1988). 
+                        Heart Disease. UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C52P4X" target="_blank">https://doi.org/10.24432/C52P4X</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Method Used Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 style="color: darkblue;">Method Used</h3>
+            <div class="card">
+                <div class="card-body">
+                    Classification
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script to handle the expansion icons for collapsible sections
+        document.querySelectorAll('.card-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const arrowIcon = header.querySelector('.material-icons');
+                if (arrowIcon.textContent === 'expand_more') {
+                    arrowIcon.textContent = 'expand_less';
+                } else {
+                    arrowIcon.textContent = 'expand_more';
+                }
+            });
+        });
+    </script>
+{% endblock %}

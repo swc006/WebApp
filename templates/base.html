@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variable Column Grid Layout</title>
+<style>
+        /* Set up the grid container */
+        .grid-container {
+                display: grid;
+                /* Define the 'rows' and 'columns' of the grid */
+                grid-template-rows: auto 1fr auto; /* Three rows: header, body, footer */
+                grid-template-columns: repeat(15, 1fr); /* Max columns for granularity, can be adjusted */
+                gap: 1px; /* Optional: Adds a gap between the grid items */
+                height: 100vh; /* Full height of the viewport */
+                }
+
+        /* General styling for the grid items for visibility */
+        .grid-item {
+                background-color: #ddd; /* Light grey to visualize the separate blocks */
+                padding: 20px; /* Some internal padding */
+                text-align: center; /* Center the content */
+                }
+
+        /* Header items (3 columns) */
+        .header-1 { 
+                grid-column: span 2; 
+                background-color: white;
+        }
+        .header-2 { grid-column: span 11; } /* Each item spans 5 of the 15 columns */
+        .header-3 { grid-column: span 2; }
+
+
+        /* Body items (5 columns) */
+        .body-1 { grid-column: span 2; } /* Each item spans 3 of the 15 columns */
+        .body-2 { grid-column: span 11; }
+        .body-3 { grid-column: span 2; }
+
+        /* Footer items (3 columns) */
+        .footer-1 { grid-column: span 15; } /* Each item spans 5 of the 15 columns */
+
+        /* Navigation bar container */
+        .navbar {
+                display: flex;
+                justify-content: center; /* Distribute the space around the links */
+                align-items: center;
+                list-style: none; /* Remove default bullet points from the list */
+                padding: 10; /* Remove default padding */
+                }
+
+        /* Navigation link items */
+        .navbar a {
+                text-decoration: none; /* Remove default underline from links */
+                color: black; /* Set link text color */
+                font-weight: bold; /* Optional: makes text bold */
+                }
+        /* Navigation link items */
+        .navbar li {
+                margin-right: 30px; /* Space between the links */
+                }
+
+         /* Optional: Change link appearance on hover */
+        .navbar a:hover {
+                color: #ddd; /* Link text color changes when hovered over */
+                }
+</style>
+</head>
+<body>
+
+<div class="grid-container">
+        <!-- Header section (3 columns) -->
+        <div class="grid-item header-1"></div>
+        <div class="grid-item header-2">
+        <ul class="navbar">
+                <!-- Navigation links -->
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+        <div class="grid-item header-3"></div>
+
+
+        <!-- Body section (5 columns) -->
+        <div class="grid-item body-1">Body Item 1</div>
+        <div class="grid-item body-2">Body Item 2</div>
+        <div class="grid-item body-3">Body Item 3</div>
+
+
+        <!-- Footer section (3 columns) -->
+        <div class="grid-item footer-1">Footer Item 1</div>
+
+</div>
+
+</body>
+</html>
